@@ -653,9 +653,13 @@ def save_sweep(
             writer.writerow([f"{freq:.2f}", primary, secondary, status])
 
     # JSON metadata sidecar describing this run, for cataloguing/analysis.
+    # Date and time are split into separate fields so they can be sorted/filtered
+    # independently by downstream tools.
+    stamp = test_time or datetime.now()
     metadata = {
         "csv_file": str(csv_path.resolve()),
-        "test_time": (test_time or datetime.now()).isoformat(timespec="seconds"),
+        "test_date": stamp.strftime("%Y-%m-%d"),
+        "test_time": stamp.strftime("%H:%M:%S"),
         "author": author,
         "description": description,
         "measurement": f"{primary_label}-{secondary_label}",

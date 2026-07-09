@@ -2,14 +2,9 @@
 # Add tags under either section as "- value" lines (GUI/CLI or by hand).
 
 test_parameters:
-  - short
+  - Short
   - long
-  - plated
-  - unplated
+
 
 test_configurations:
-  - 1pair
-  - 2pair
-  - 3pair
-  - 4pair
-  - 5pair
+

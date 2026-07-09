@@ -131,6 +131,7 @@ def build_preview(
     csv_path = lcr.DATA_DIR / stem.with_suffix(".csv")
     return {
         "csv_file": str(csv_path.resolve()),
+        "test_date": "(set when the sweep runs)",
         "test_time": "(set when the sweep runs)",
         "author": author.strip(),
         "description": description.strip(),
